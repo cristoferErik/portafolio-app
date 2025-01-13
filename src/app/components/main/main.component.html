@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="grid">
+        <div class="section">
+            <div class="logo-container">
+                <div class="image-cv">
+                    <img [src]="portafolio.image" alt="">
+                </div>
+                <div class="name">{{portafolio.nome}}</div>
+                <div class="social">
+                    @for (social of portafolio.socialNetworks; track $index) {
+                    <a [href]="social.url" rel="noopener noreferrer">
+                        <img [src]="social.image" alt="Social Icon">
+                    </a>
+                    }
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="title">Su di me</h2>
+                <div class="text">{{portafolio.about}}</div>
+                <div class="button-container">
+                    <a class="button" [href]="portafolio.cv" download="CristoferCalvoCV.pdf">scaricare csv</a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2 class="title">Educazione</h2>
+                @for (edu of portafolio.educazione ; track $index) {
+                    <div class="text">{{edu.descrizione}}</div>
+                    <div class="text">{{edu.image}}</div>
+                }
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2 class="title">Competenze</h2>
+                <div class="items">
+                    @for (sk of portafolio.skills ; track $index) {
+                        <div class="item">
+                            <div><img [src]="sk.image" alt=""></div>
+                            <div class="competence">{{sk.nome}}</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"></div>
+    </div>
+</div>
