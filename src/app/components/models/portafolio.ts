@@ -32,7 +32,7 @@ export class Skill{
 export class Linguaggio{
     id!:number;
     nome!:string;
-    image!:string;
+    livello!:string;
 }
 export class SocialNetwork{
     id!:number;
@@ -42,6 +42,6 @@ export class SocialNetwork{
 export class Educazione{
     id!:number;
     image!:string;
-    paese!:string;
+    nome!:string;
     descrizione!:string;
 }

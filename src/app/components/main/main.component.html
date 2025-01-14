@@ -25,10 +25,17 @@
         <div class="section">
             <div class="content">
                 <h2 class="title">Educazione</h2>
-                @for (edu of portafolio.educazione ; track $index) {
-                    <div class="text">{{edu.descrizione}}</div>
-                    <div class="text">{{edu.image}}</div>
-                }
+                <div class="educazione">
+                    @for (edu of portafolio.educazione ; track $index) {
+                    <div class="edu">
+                        <div>
+                            <div class="nome">{{edu.nome}}</div>
+                            <div><img class="logo-edu" [src]="edu.image" alt="image"></div>
+                        </div>
+                        <div class="text">{{edu.descrizione}}</div>
+                    </div>
+                    }
+                </div>
             </div>
         </div>
         <div class="section">
@@ -36,16 +43,41 @@
                 <h2 class="title">Competenze</h2>
                 <div class="items">
                     @for (sk of portafolio.skills ; track $index) {
-                        <div class="item">
-                            <div><img [src]="sk.image" alt=""></div>
-                            <div class="competence">{{sk.nome}}</div>
-                        </div>
+                    <div class="item">
+                        <div><img [src]="sk.image" alt=""></div>
+                        <div class="competence">{{sk.nome}}</div>
+                    </div>
                     }
                 </div>
             </div>
         </div>
-        <div class="section"></div>
-        <div class="section"></div>
+        <div class="section">
+            <div class="content">
+                <h2 class="title">Linguaggi</h2>
+                <div class="linguaggi">
+                    @for (lin of portafolio.linguaggi ; track $index) {
+                    <div class="linguaggio">
+                        <div>{{lin.nome}}:</div>
+                        <div>{{lin.livello}}</div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2 class="title">Progietti</h2>
+                <div class="progietti">
+                    @for (pro of portafolio.progietti ; track $index) {
+                    <div class="progietto">
+                        <div><img [src]="pro.image" alt=""></div>
+                        <h3>{{pro.nome}}</h3>
+                        <div>{{pro.descrizione}}</div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
         <div class="section"></div>
     </div>
 </div>
